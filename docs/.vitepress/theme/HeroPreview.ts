@@ -30,8 +30,8 @@ const steps = [
   },
 ];
 
-const code = `import { createOnboarding } from '@onboarding/core';
-import '@onboarding/core/styles.css';
+const code = `import { createOnboarding } from '@zero-lab/onboarding';
+import '@zero-lab/onboarding/styles.css';
 
 const steps = [
 ${steps

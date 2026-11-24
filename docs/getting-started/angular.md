@@ -9,11 +9,11 @@ For an existing **standalone Angular 21.2.26+ (21.x)** application. You need one
 ::: code-group
 
 ```sh [pnpm]
-pnpm add @onboarding/angular @onboarding/core
+pnpm add @zero-lab/onboarding-angular @zero-lab/onboarding
 ```
 
 ```sh [npm]
-npm install @onboarding/angular @onboarding/core
+npm install @zero-lab/onboarding-angular @zero-lab/onboarding
 ```
 
 :::
@@ -21,14 +21,14 @@ npm install @onboarding/angular @onboarding/core
 Keep Angular packages on matching versions. The adapter uses Angular's common, core, and router packages, plus RxJS 7.8.2+ within major 7.
 
 ```css [src/styles.css]
-@import '@onboarding/core/styles.css';
+@import '@zero-lab/onboarding/styles.css';
 ```
 
 ## 2. Provide the tour
 
 ```ts [src/app/app.config.ts]
 import type { ApplicationConfig } from '@angular/core';
-import { provideOnboarding } from '@onboarding/angular';
+import { provideOnboarding } from '@zero-lab/onboarding-angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -63,7 +63,7 @@ Keep your existing providers alongside `provideOnboarding`. The provider owns th
 
 ```ts [src/app/app.component.ts]
 import { Component, inject } from '@angular/core';
-import { OnboardingService } from '@onboarding/angular';
+import { OnboardingService } from '@zero-lab/onboarding-angular';
 
 @Component({
   selector: 'app-root',

@@ -1,8 +1,17 @@
 {
-  "name": "@onboarding/core",
+  "name": "@zero-lab/onboarding",
   "version": "0.1.0",
   "description": "Framework-agnostic, accessible product tours",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeroGravs/onboarding.git",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/ZeroGravs/onboarding#readme",
+  "bugs": {
+    "url": "https://github.com/ZeroGravs/onboarding/issues"
+  },
   "engines": {
     "node": ">=18"
   },

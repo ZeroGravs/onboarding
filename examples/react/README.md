@@ -6,13 +6,13 @@ From the monorepo root, install dependencies and build the libraries first:
 
 ```sh
 pnpm install
-pnpm --filter @onboarding/core build
-pnpm --filter @onboarding/react build
+pnpm --filter @zero-lab/onboarding build
+pnpm --filter @zero-lab/onboarding-react build
 pnpm --filter @onboarding/example-react dev --host 127.0.0.1 --port 5173
 ```
 
-For an npm-based standalone app, install `@onboarding/core`,
-`@onboarding/react`, `react`, `react-dom`, and `react-router-dom` with
+For an npm-based standalone app, install `@zero-lab/onboarding`,
+`@zero-lab/onboarding-react`, `react`, `react-dom`, and `react-router-dom` with
 `npm install`, plus the Vite/TypeScript dev dependencies listed in `package.json`.
 Workspace manifests themselves require pnpm.
 

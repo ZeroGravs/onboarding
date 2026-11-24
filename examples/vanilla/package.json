@@ -9,6 +9,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@onboarding/core": "workspace:*"
+    "@zero-lab/onboarding": "workspace:*"
   }
 }

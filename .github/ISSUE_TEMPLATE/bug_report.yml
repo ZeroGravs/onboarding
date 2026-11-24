@@ -12,7 +12,7 @@ body:
     attributes:
       label: Package and version
       description: Include a commit if testing the unreleased preview.
-      placeholder: '@onboarding/react 0.1.0, or commit SHA'
+      placeholder: '@zero-lab/onboarding-react 0.1.0, or commit SHA'
     validations:
       required: true
   - type: textarea

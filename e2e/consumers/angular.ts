@@ -13,11 +13,11 @@ import {
   OnboardingOutletComponent,
   OnboardingService,
   OnboardingStepDirective,
-} from '@onboarding/angular';
+} from '@zero-lab/onboarding-angular';
 import { assertInstalled, assertNoDOM, createOptions } from './common.js';
 
 assertNoDOM();
-assertInstalled('@onboarding/angular');
+assertInstalled('@zero-lab/onboarding-angular');
 assert.equal(typeof OnboardingOutletComponent, 'function');
 assert.equal(typeof OnboardingStepDirective, 'function');
 const directive = new OnboardingStepDirective();

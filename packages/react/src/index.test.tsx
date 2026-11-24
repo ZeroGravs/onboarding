@@ -3,7 +3,7 @@ import { renderToString } from 'react-dom/server';
 import { hydrateRoot } from 'react-dom/client';
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { createOnboarding, type OnboardingOptions } from '@onboarding/core';
+import { createOnboarding, type OnboardingOptions } from '@zero-lab/onboarding';
 import { OnboardingProvider, OnboardingStep, useOnboarding } from './index';
 
 afterEach(cleanup);

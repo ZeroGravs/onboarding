@@ -5,7 +5,7 @@ Start with your existing application. Add a provider, mark two elements, and sta
 <FrameworkLinks />
 
 ::: info Preview documentation
-The packages are not published yet. The npm/pnpm installation commands in the quickstarts become available after the first release. You can try the [live example](/playground) without installing anything.
+Choose your framework below for installation instructions, or try the [live example](/playground) without installing anything.
 :::
 
 ## Integrate into your application

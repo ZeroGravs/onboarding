@@ -155,7 +155,7 @@ async function packAll(temporaryRoot) {
   }
   for (const name of packageNames.filter((name) => name !== 'core')) {
     assert.equal(
-      manifests[name].dependencies?.['@onboarding/core'],
+      manifests[name].dependencies?.['@zero-lab/onboarding'],
       `^${manifests.core.version}`,
       `${name}: packed core dependency must be rewritten to the release version`,
     );
@@ -174,7 +174,7 @@ async function checkConsumer(manager, profileName, packed, temporaryRoot) {
   await mkdir(project);
   const selectedPackages = adapter ? ['core', adapter] : ['core'];
   const packageDependencies = Object.fromEntries(
-    selectedPackages.map((name) => [`@onboarding/${name}`, `file:${packed.archives[name]}`]),
+    selectedPackages.map((name) => [packed.manifests[name].name, `file:${packed.archives[name]}`]),
   );
   const manifest = {
     name: `consumer-${manager}-${profileName}`,
@@ -189,9 +189,11 @@ async function checkConsumer(manager, profileName, packed, temporaryRoot) {
     // Force transitive core references to the same packed release, not the registry.
     // Its actual published semver range was checked above, before any overrides.
     ...(manager === 'npm'
-      ? { overrides: { '@onboarding/core': '$@onboarding/core' } }
+      ? { overrides: { '@zero-lab/onboarding': '$@zero-lab/onboarding' } }
       : {
-          pnpm: { overrides: { '@onboarding/core': packageDependencies['@onboarding/core'] } },
+          pnpm: {
+            overrides: { '@zero-lab/onboarding': packageDependencies['@zero-lab/onboarding'] },
+          },
         }),
   };
   await writeFile(join(project, 'package.json'), `${JSON.stringify(manifest, null, 2)}\n`);
@@ -221,16 +223,17 @@ async function checkConsumer(manager, profileName, packed, temporaryRoot) {
 
   // Verify exact installed versions and physical isolation, including pnpm symlinks.
   const installedVersions = [];
+  const releaseVersions = new Map(
+    Object.values(packed.manifests).map(({ name, version }) => [name, version]),
+  );
   for (const [name, requested] of Object.entries(manifest.dependencies)) {
     const directory = await realpath(join(project, 'node_modules', name));
     assert(isWithin(project, directory), `${name} resolves outside the consumer: ${directory}`);
     const installed = JSON.parse(await readFile(join(directory, 'package.json'), 'utf8'));
-    const expected = name.startsWith('@onboarding/')
-      ? packed.manifests[name.slice('@onboarding/'.length)].version
-      : requested;
+    const expected = releaseVersions.get(name) ?? requested;
     assert.equal(installed.name, name);
     assert.equal(installed.version, expected, `${name}: unexpected installed version`);
-    if (!name.startsWith('@onboarding/')) installedVersions.push(`${name}@${installed.version}`);
+    if (!releaseVersions.has(name)) installedVersions.push(`${name}@${installed.version}`);
   }
   console.log(`[${manager}/${profileName}] ${installedVersions.join(', ')}`);
   await run(

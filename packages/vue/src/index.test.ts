@@ -11,7 +11,7 @@ import {
 import { renderToString } from 'vue/server-renderer';
 import { mount, type VueWrapper } from '@vue/test-utils';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { createOnboarding, type Onboarding, type OnboardingOptions } from '@onboarding/core';
+import { createOnboarding, type Onboarding, type OnboardingOptions } from '@zero-lab/onboarding';
 import {
   createOnboardingPlugin,
   createVueRouterAdapter,

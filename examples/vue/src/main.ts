@@ -1,13 +1,13 @@
 import { createApp, defineComponent, h, ref, withDirectives } from 'vue';
 import { createRouter, createWebHistory, RouterLink, RouterView } from 'vue-router';
-import { localStorageAdapter } from '@onboarding/core';
+import { localStorageAdapter } from '@zero-lab/onboarding';
 import {
   createOnboardingPlugin,
   createVueRouterAdapter,
   useOnboarding,
   vOnboardingStep,
-} from '@onboarding/vue';
-import '@onboarding/core/styles.css';
+} from '@zero-lab/onboarding-vue';
+import '@zero-lab/onboarding/styles.css';
 import './styles.css';
 
 const Home = defineComponent({

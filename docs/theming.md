@@ -1,6 +1,6 @@
 # Theming and rendering
 
-Import `@onboarding/core/styles.css` once at the application entry point. Framework packages do not silently inject CSS.
+Import `@zero-lab/onboarding/styles.css` once at the application entry point. Framework packages do not silently inject CSS.
 
 ```css
 :root {

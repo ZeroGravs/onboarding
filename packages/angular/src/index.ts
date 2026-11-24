@@ -26,7 +26,7 @@ import {
   type Onboarding,
   type OnboardingOptions,
   type OnboardingState,
-} from '@onboarding/core';
+} from '@zero-lab/onboarding';
 
 // Keep the small public surface in one entry file: ng-packagr 18 emits .mjs
 // runtime files, while extensionless declaration re-exports fail Node ESM checks.

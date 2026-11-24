@@ -9,11 +9,11 @@ For an existing **React 18 or 19** application. You will add one provider and tw
 ::: code-group
 
 ```sh [pnpm]
-pnpm add @onboarding/react @onboarding/core
+pnpm add @zero-lab/onboarding-react @zero-lab/onboarding
 ```
 
 ```sh [npm]
-npm install @onboarding/react @onboarding/core
+npm install @zero-lab/onboarding-react @zero-lab/onboarding
 ```
 
 :::
@@ -25,9 +25,9 @@ React and React DOM stay on your application's existing versions.
 Use this as `App.tsx`, or move the provider above your existing screen:
 
 ```tsx [App.tsx]
-import { OnboardingProvider, useOnboarding } from '@onboarding/react';
-import type { OnboardingOptions } from '@onboarding/core';
-import '@onboarding/core/styles.css';
+import { OnboardingProvider, useOnboarding } from '@zero-lab/onboarding-react';
+import type { OnboardingOptions } from '@zero-lab/onboarding';
+import '@zero-lab/onboarding/styles.css';
 
 const options: OnboardingOptions = {
   tours: [

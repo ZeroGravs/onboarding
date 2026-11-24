@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { OnboardingStepDirective } from '@onboarding/angular';
+import { OnboardingStepDirective } from '@zero-lab/onboarding-angular';
 
 @Component({
   selector: 'app-welcome',

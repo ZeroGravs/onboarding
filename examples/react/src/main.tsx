@@ -1,9 +1,9 @@
 import { StrictMode, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, NavLink, Outlet, RouterProvider } from 'react-router-dom';
-import { localStorageAdapter, type OnboardingOptions } from '@onboarding/core';
-import { OnboardingProvider, useOnboarding } from '@onboarding/react';
-import '@onboarding/core/styles.css';
+import { localStorageAdapter, type OnboardingOptions } from '@zero-lab/onboarding';
+import { OnboardingProvider, useOnboarding } from '@zero-lab/onboarding-react';
+import '@zero-lab/onboarding/styles.css';
 import './styles.css';
 
 function StartButton() {

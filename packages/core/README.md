@@ -1,15 +1,15 @@
-# @onboarding/core
+# @zero-lab/onboarding
 
 Framework-independent, SSR-safe guided tours with a themeable default UI or custom/headless rendering.
 
 ```sh
-pnpm add @onboarding/core
-# npm install @onboarding/core
+pnpm add @zero-lab/onboarding
+# npm install @zero-lab/onboarding
 ```
 
 ```ts
-import { createOnboarding } from '@onboarding/core';
-import '@onboarding/core/styles.css';
+import { createOnboarding } from '@zero-lab/onboarding';
+import '@zero-lab/onboarding/styles.css';
 
 const kit = createOnboarding({
   tours: [
@@ -35,4 +35,4 @@ Exports: `createOnboarding`, `memoryStorage`, `localStorageAdapter`, `createHist
 
 Tours persist by default with a safe localStorage adapter. Use `memoryStorage()` for ephemeral sessions, or provide a synchronous custom adapter. Use `renderer: 'none'` for headless mode. The CDN build exposes `Onboarding` and includes its positioning dependency.
 
-See the repository's API, routing, theming, compatibility, and security guides for full usage. Package names are reserved in source only; this initial implementation has not been published.
+See the repository's API, routing, theming, compatibility, and security guides for full usage.

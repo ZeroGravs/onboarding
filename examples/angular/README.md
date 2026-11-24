@@ -7,8 +7,8 @@ tour starts on `/` and navigates to `/settings`.
 From the monorepo root, after the workspace owner installs dependencies:
 
 ```sh
-pnpm --filter @onboarding/core build
-pnpm --filter @onboarding/angular build
+pnpm --filter @zero-lab/onboarding build
+pnpm --filter @zero-lab/onboarding-angular build
 pnpm --filter @onboarding/example-angular dev --host 127.0.0.1 --port 4177
 ```
 
@@ -22,5 +22,5 @@ pnpm --filter @onboarding/example-angular typecheck
 pnpm --filter @onboarding/example-angular build
 ```
 
-The CLI includes `@onboarding/core/styles.css` as a global stylesheet. No custom
+The CLI includes `@zero-lab/onboarding/styles.css` as a global stylesheet. No custom
 renderer or template outlet is required for this default-renderer example.

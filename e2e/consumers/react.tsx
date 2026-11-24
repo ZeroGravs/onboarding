@@ -1,17 +1,17 @@
 import assert from 'node:assert/strict';
 import type { ReactElement } from 'react';
 import { renderToString } from 'react-dom/server';
-import { createOnboarding } from '@onboarding/core';
+import { createOnboarding } from '@zero-lab/onboarding';
 import {
   OnboardingProvider,
   OnboardingStep,
   useOnboarding,
   type OnboardingContextValue,
-} from '@onboarding/react';
+} from '@zero-lab/onboarding-react';
 import { assertInstalled, assertNoDOM, createOptions } from './common.js';
 
 assertNoDOM();
-assertInstalled('@onboarding/react');
+assertInstalled('@zero-lab/onboarding-react');
 const kit = createOnboarding(createOptions());
 
 function Consumer(): ReactElement {

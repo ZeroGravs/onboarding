@@ -6,6 +6,6 @@ export default defineConfig({
   dts: true,
   clean: true,
   sourcemap: true,
-  external: ['react', 'react/jsx-runtime', '@onboarding/core'],
+  external: ['react', 'react/jsx-runtime', '@zero-lab/onboarding'],
   banner: { js: '"use client";' },
 });

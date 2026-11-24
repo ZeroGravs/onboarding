@@ -1,7 +1,7 @@
 import { inject, type ApplicationConfig } from '@angular/core';
 import { Router, provideRouter } from '@angular/router';
-import { createAngularRouter, provideOnboarding } from '@onboarding/angular';
-import { localStorageAdapter } from '@onboarding/core';
+import { createAngularRouter, provideOnboarding } from '@zero-lab/onboarding-angular';
+import { localStorageAdapter } from '@zero-lab/onboarding';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {

@@ -5,5 +5,5 @@
     "entryFile": "src/index.ts"
   },
   "assets": ["README.md"],
-  "allowedNonPeerDependencies": ["@onboarding/core", "tslib"]
+  "allowedNonPeerDependencies": ["@zero-lab/onboarding", "tslib"]
 }

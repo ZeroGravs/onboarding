@@ -9,11 +9,11 @@ For an existing **Vue 3.3+** application. Install the plugin once, then start a 
 ::: code-group
 
 ```sh [pnpm]
-pnpm add @onboarding/vue @onboarding/core
+pnpm add @zero-lab/onboarding-vue @zero-lab/onboarding
 ```
 
 ```sh [npm]
-npm install @onboarding/vue @onboarding/core
+npm install @zero-lab/onboarding-vue @zero-lab/onboarding
 ```
 
 :::
@@ -22,9 +22,9 @@ npm install @onboarding/vue @onboarding/core
 
 ```ts [src/main.ts]
 import { createApp } from 'vue';
-import { createOnboardingPlugin } from '@onboarding/vue';
+import { createOnboardingPlugin } from '@zero-lab/onboarding-vue';
 import App from './App.vue';
-import '@onboarding/core/styles.css';
+import '@zero-lab/onboarding/styles.css';
 
 createApp(App)
   .use(
@@ -59,7 +59,7 @@ The plugin supplies one engine to the app and manages mounting and cleanup. The 
 
 ```vue [src/App.vue]
 <script setup lang="ts">
-import { useOnboarding } from '@onboarding/vue';
+import { useOnboarding } from '@zero-lab/onboarding-vue';
 
 const { kit, state } = useOnboarding();
 </script>

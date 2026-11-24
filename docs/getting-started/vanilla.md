@@ -9,11 +9,11 @@ For an existing **Vite or similar bundled application**. No framework adapter is
 ::: code-group
 
 ```sh [pnpm]
-pnpm add @onboarding/core
+pnpm add @zero-lab/onboarding
 ```
 
 ```sh [npm]
-npm install @onboarding/core
+npm install @zero-lab/onboarding
 ```
 
 :::
@@ -44,8 +44,8 @@ The `data-onboarding` values are stable anchors. They do not change your markup'
 ## 3. Create and start the tour
 
 ```ts [src/main.ts]
-import { createOnboarding } from '@onboarding/core';
-import '@onboarding/core/styles.css';
+import { createOnboarding } from '@zero-lab/onboarding';
+import '@zero-lab/onboarding/styles.css';
 
 const kit = createOnboarding({
   tours: [
@@ -84,8 +84,11 @@ In an application with a managed lifecycle, call `kit.destroy()` when permanentl
 After publication, use the standalone bundle without npm or a build tool. It exposes the `Onboarding` browser global:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@onboarding/core@0.1.0/dist/styles.css" />
-<script src="https://cdn.jsdelivr.net/npm/@onboarding/core@0.1.0/dist/cdn.global.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@zero-lab/onboarding@0.1.0/dist/styles.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/@zero-lab/onboarding@0.1.0/dist/cdn.global.js"></script>
 <script>
   const kit = Onboarding.createOnboarding({
     tours: [
@@ -101,7 +104,7 @@ After publication, use the standalone bundle without npm or a build tool. It exp
 </script>
 ```
 
-These URLs become available after publication. Pin a specific package version rather than `latest`. Keep your application's Content Security Policy; use an allowed external script or a nonce for the initialization code when required.
+Pin a specific package version rather than `latest`. Keep your application's Content Security Policy; use an allowed external script or a nonce for the initialization code when required.
 
 ## Make it yours
 

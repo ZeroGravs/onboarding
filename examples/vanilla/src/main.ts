@@ -1,5 +1,5 @@
-import { createHistoryRouter, createOnboarding, localStorageAdapter } from '@onboarding/core';
-import '@onboarding/core/styles.css';
+import { createHistoryRouter, createOnboarding, localStorageAdapter } from '@zero-lab/onboarding';
+import '@zero-lab/onboarding/styles.css';
 import './style.css';
 
 const router = createHistoryRouter();

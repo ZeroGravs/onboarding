@@ -57,7 +57,7 @@ stop();
 ## Persistence
 
 ```ts
-import { memoryStorage, localStorageAdapter } from '@onboarding/core';
+import { memoryStorage, localStorageAdapter } from '@zero-lab/onboarding';
 
 const temporary = memoryStorage();
 const persistent = localStorageAdapter('my-app:tours');

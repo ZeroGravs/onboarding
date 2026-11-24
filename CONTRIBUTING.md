@@ -145,7 +145,7 @@ Tests use the real core and Angular TestBed with JIT and zoneless change detecti
 
 Consumers can install with pnpm, npm or another npm-compatible package manager. pnpm is only required to work on this monorepo.
 
-1. Confirm ownership of the `@onboarding` npm scope or rename all `@onboarding/*` references, workspace dependencies, imports, Changesets configuration, and documentation together. The unscoped names `onboarding` and `onboarding-kit` already belong to other packages. This workspace has not reserved a scope; a 404 for a scoped package does not prove its scope is available.
+1. Confirm that your npm account has publishing access to the `zero-lab` organization.
 2. Set your registry with `.npmrc` or package `publishConfig.registry`. Never commit tokens; use your package manager's credential configuration or trusted publishing.
 3. Use `pnpm install --frozen-lockfile` and run `pnpm verify:release` after installing the three Playwright browsers.
 4. Use `pnpm changeset` for changes, `pnpm version-packages` to apply versions, and inspect generated changelogs.
@@ -164,11 +164,14 @@ labels; the accompanying marks are decorative for assistive technology.
 
 ## CDN
 
-After publishing, load a pinned core version's `dist/cdn.global.js` and `dist/styles.css` from your preferred npm CDN. The browser global is `Onboarding`:
+Load a pinned core version's `dist/cdn.global.js` and `dist/styles.css` from your preferred npm CDN. The browser global is `Onboarding`:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@onboarding/core@0.1.0/dist/styles.css" />
-<script src="https://cdn.jsdelivr.net/npm/@onboarding/core@0.1.0/dist/cdn.global.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@zero-lab/onboarding@0.1.0/dist/styles.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/@zero-lab/onboarding@0.1.0/dist/cdn.global.js"></script>
 <script>
   const kit = Onboarding.createOnboarding({
     tours: [
@@ -183,4 +186,4 @@ After publishing, load a pinned core version's `dist/cdn.global.js` and `dist/st
 </script>
 ```
 
-These URLs are examples for after publication, not currently hosted assets. The CDN bundle includes Floating UI; ESM/CommonJS builds declare it as an npm dependency. Pin versions instead of using `latest` in production.
+The CDN bundle includes Floating UI; ESM/CommonJS builds declare it as an npm dependency. Pin versions instead of using `latest` in production.

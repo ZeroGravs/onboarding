@@ -3,7 +3,7 @@ import { realpathSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { dirname, isAbsolute, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { memoryStorage, type OnboardingOptions } from '@onboarding/core';
+import { memoryStorage, type OnboardingOptions } from '@zero-lab/onboarding';
 
 export function createOptions(): OnboardingOptions {
   return {

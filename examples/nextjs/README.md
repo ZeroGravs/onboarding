@@ -5,12 +5,12 @@ Next.js 16 + React 19.2, with server-rendered pages and a small client provider.
 ```sh
 # From the monorepo root
 pnpm install
-pnpm --filter @onboarding/core build
-pnpm --filter @onboarding/react build
+pnpm --filter @zero-lab/onboarding build
+pnpm --filter @zero-lab/onboarding-react build
 pnpm --filter @onboarding/example-nextjs dev --hostname 127.0.0.1 --port 3000
 ```
 
-For a standalone npm app, `npm install next@^16.1 @onboarding/core @onboarding/react react@^19.2 react-dom@^19.2`
+For a standalone npm app, `npm install next@^16.1 @zero-lab/onboarding @zero-lab/onboarding-react react@^19.2 react-dom@^19.2`
 and add the TypeScript/type dev dependencies in `package.json`.
 The workspace manifests themselves require pnpm.
 

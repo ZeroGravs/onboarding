@@ -4,7 +4,7 @@ import { h } from 'vue';
 import FrameworkLinks from './FrameworkLinks';
 import HeroPreview from './HeroPreview';
 import LiveTour from './LiveTour';
-import '@onboarding/core/styles.css';
+import '@zero-lab/onboarding/styles.css';
 import './style.css';
 import './hero.css';
 

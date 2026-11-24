@@ -6,5 +6,5 @@ export default defineConfig({
   dts: true,
   clean: true,
   sourcemap: true,
-  external: ['vue', '@onboarding/core'],
+  external: ['vue', '@zero-lab/onboarding'],
 });

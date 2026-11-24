@@ -1,29 +1,29 @@
-# @onboarding/vue
+# @zero-lab/onboarding-vue
 
 Vue 3.3+ bindings for Onboarding Kit. MIT. No eager `vue-router` dependency.
 
 ## Install
 
 ```sh
-pnpm add @onboarding/vue @onboarding/core vue
+pnpm add @zero-lab/onboarding-vue @zero-lab/onboarding vue
 # or
-npm install @onboarding/vue @onboarding/core vue
+npm install @zero-lab/onboarding-vue @zero-lab/onboarding vue
 ```
 
 Import **core CSS separately**, once in the application entry:
 
 ```ts
-import '@onboarding/core/styles.css';
+import '@zero-lab/onboarding/styles.css';
 ```
 
 ## Minimal usage: plugin + composable
 
 ```ts
 import { createApp } from 'vue';
-import { createOnboardingPlugin } from '@onboarding/vue';
-import { localStorageAdapter } from '@onboarding/core';
+import { createOnboardingPlugin } from '@zero-lab/onboarding-vue';
+import { localStorageAdapter } from '@zero-lab/onboarding';
 import App from './App.vue';
-import '@onboarding/core/styles.css';
+import '@zero-lab/onboarding/styles.css';
 
 createApp(App)
   .use(
@@ -49,7 +49,7 @@ createApp(App)
 
 ```vue
 <script setup lang="ts">
-import { useOnboarding } from '@onboarding/vue';
+import { useOnboarding } from '@zero-lab/onboarding-vue';
 const { kit, state } = useOnboarding();
 </script>
 
@@ -74,8 +74,8 @@ Use the component instead of the plugin to scope a kit to a subtree:
 
 ```vue
 <script setup lang="ts">
-import { OnboardingProvider, vOnboardingStep } from '@onboarding/vue';
-import type { OnboardingOptions } from '@onboarding/core';
+import { OnboardingProvider, vOnboardingStep } from '@zero-lab/onboarding-vue';
+import type { OnboardingOptions } from '@zero-lab/onboarding';
 const options: OnboardingOptions = {
   tours: [
     {
@@ -127,7 +127,7 @@ slot labels use English defaults. Headless UI need not import core CSS.
 ## Vue Router
 
 ```ts
-import { createVueRouterAdapter, createOnboardingPlugin } from '@onboarding/vue';
+import { createVueRouterAdapter, createOnboardingPlugin } from '@zero-lab/onboarding-vue';
 
 app.use(router);
 app.use(
@@ -152,7 +152,7 @@ Create an app/plugin or component provider **per request**, not an SSR singleton
 Kit construction is SSR-safe; no mounting or subscription takes place until
 Vue mounts in the browser. Keep initial options/markup deterministic and start
 tours after hydration. The same core can serve a Next.js app via the React
-adapter; see `@onboarding/react` and `examples/nextjs` for App Router hydration.
+adapter; see `@zero-lab/onboarding-react` and `examples/nextjs` for App Router hydration.
 
 The provider captures options/kit/labels during setup. Use a different component
 key for new configuration; declare a `#step` slot from the start rather than

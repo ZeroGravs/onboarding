@@ -15,7 +15,7 @@ import {
 } from '@angular/platform-browser-dynamic/testing';
 import { Router, provideRouter } from '@angular/router';
 import { RouterTestingHarness } from '@angular/router/testing';
-import { memoryStorage, type OnboardingOptions } from '@onboarding/core';
+import { memoryStorage, type OnboardingOptions } from '@zero-lab/onboarding';
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   createAngularRouter,

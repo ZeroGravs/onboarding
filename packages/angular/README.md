@@ -1,23 +1,23 @@
-# @onboarding/angular
+# @zero-lab/onboarding-angular
 
-Standalone Angular **21.2.26+ (21.x)** bindings for `@onboarding/core`. Built as an ESM-only
+Standalone Angular **21.2.26+ (21.x)** bindings for `@zero-lab/onboarding`. Built as an ESM-only
 Angular Package Format library with partial compilation. Requires Angular common,
 core, router, and RxJS 7.
 
 ## Installation
 
 ```sh
-pnpm add @onboarding/angular @onboarding/core
+pnpm add @zero-lab/onboarding-angular @zero-lab/onboarding
 ```
 
 Keep Angular packages on matching versions. Import the default renderer stylesheet
 once, in a global stylesheet:
 
 ```css
-@import '@onboarding/core/styles.css';
+@import '@zero-lab/onboarding/styles.css';
 ```
 
-Alternatively add `@onboarding/core/styles.css` to Angular CLI's global `styles`
+Alternatively add `@zero-lab/onboarding/styles.css` to Angular CLI's global `styles`
 array. The adapter does not import CSS or access browser globals on the server.
 
 ## Standalone application and Angular Router
@@ -26,8 +26,8 @@ array. The adapter does not import CSS or access browser globals on the server.
 import { inject } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter, Router } from '@angular/router';
-import { createAngularRouter, provideOnboarding } from '@onboarding/angular';
-import { localStorageAdapter } from '@onboarding/core';
+import { createAngularRouter, provideOnboarding } from '@zero-lab/onboarding-angular';
+import { localStorageAdapter } from '@zero-lab/onboarding';
 import { AppComponent } from './app.component';
 import { routes } from './app.routes';
 
@@ -80,7 +80,7 @@ Use pathname-only step routes such as `/settings`.
 
 ```ts
 import { Component, inject } from '@angular/core';
-import { OnboardingService, OnboardingStepDirective } from '@onboarding/angular';
+import { OnboardingService, OnboardingStepDirective } from '@zero-lab/onboarding-angular';
 
 @Component({
   selector: 'app-welcome',

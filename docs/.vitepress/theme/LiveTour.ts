@@ -1,6 +1,6 @@
 import { computed, defineComponent, h, onBeforeUnmount, onMounted, ref, shallowRef } from 'vue';
-import { createOnboarding, defaultRenderer, memoryStorage } from '@onboarding/core';
-import type { Onboarding, OnboardingState } from '@onboarding/core';
+import { createOnboarding, defaultRenderer, memoryStorage } from '@zero-lab/onboarding';
+import type { Onboarding, OnboardingState } from '@zero-lab/onboarding';
 
 const themes = {
   violet: {

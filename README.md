@@ -2,38 +2,38 @@
 
 Framework-independent, accessible product tours for **React, Next.js, Vue, Angular, and plain JavaScript**. Add spotlighted walkthroughs across routes, resume saved progress, and bring your own UI when you need it.
 
-> **Experimental `0.1` preview.** The packages are **not yet published**, and APIs may change before `1.0`. The `@onboarding` npm scope must belong to you before publishing.
+> **Experimental `0.1` preview.** APIs may change before `1.0`.
 
 ## Packages
 
-| Package               | Use                                                                         |
-| --------------------- | --------------------------------------------------------------------------- |
-| `@onboarding/core`    | Engine, default UI, CSS, vanilla JS and CDN bundle                          |
-| `@onboarding/react`   | React provider, hooks and anchors; Next.js client components                |
-| `@onboarding/vue`     | Vue plugin, composable, directive and slotted provider                      |
-| `@onboarding/angular` | Angular 21.2.26+ (21.x) providers, signals, directive and template renderer |
+| Package                        | Use                                                                         |
+| ------------------------------ | --------------------------------------------------------------------------- |
+| `@zero-lab/onboarding`         | Engine, default UI, CSS, vanilla JS and CDN bundle                          |
+| `@zero-lab/onboarding-react`   | React provider, hooks and anchors; Next.js client components                |
+| `@zero-lab/onboarding-vue`     | Vue plugin, composable, directive and slotted provider                      |
+| `@zero-lab/onboarding-angular` | Angular 21.2.26+ (21.x) providers, signals, directive and template renderer |
 
 All packages are MIT licensed. Core has no framework dependency. React and Vue provide ESM, CommonJS, and TypeScript declarations; Angular uses the Angular Package Format (ESM).
 
 ## Install
 
-After publishing, consumers can use either package manager:
+Install the React adapter and core with your package manager:
 
 ```sh
-pnpm add @onboarding/react @onboarding/core
+pnpm add @zero-lab/onboarding-react @zero-lab/onboarding
 # or
-npm install @onboarding/react @onboarding/core
+npm install @zero-lab/onboarding-react @zero-lab/onboarding
 # or
-yarn add @onboarding/react @onboarding/core
+yarn add @zero-lab/onboarding-react @zero-lab/onboarding
 ```
 
-Replace `react` with `vue` or `angular` as needed. Plain JavaScript only needs `@onboarding/core`. In this workspace, the examples use local `workspace:*` dependencies.
+Use `@zero-lab/onboarding-vue` or `@zero-lab/onboarding-angular` for the other framework adapters. Plain JavaScript only needs `@zero-lab/onboarding`. In this workspace, the examples use local `workspace:*` dependencies.
 
 ## Start with plain JavaScript
 
 ```ts
-import { createOnboarding } from '@onboarding/core';
-import '@onboarding/core/styles.css';
+import { createOnboarding } from '@zero-lab/onboarding';
+import '@zero-lab/onboarding/styles.css';
 
 const kit = createOnboarding({
   tours: [
@@ -89,7 +89,7 @@ The default spotlight is visual: it does not prevent interacting with the highli
 
 See the [tested framework matrix](docs/compatibility.md) and [security boundaries](docs/security.md).
 The initial Angular 18–21 preview range has been replaced with a patched Angular 21 baseline.
-Packages are still unpublished; this release has no hosted service or uptime SLA.
+This release has no hosted service or uptime SLA.
 
 ## Contributing
 

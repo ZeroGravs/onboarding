@@ -1,26 +1,26 @@
-# @onboarding/react
+# @zero-lab/onboarding-react
 
 React 18 and 19 bindings for Onboarding Kit. MIT.
 
 ## Install
 
 ```sh
-pnpm add @onboarding/react @onboarding/core react react-dom
+pnpm add @zero-lab/onboarding-react @zero-lab/onboarding react react-dom
 # or
-npm install @onboarding/react @onboarding/core react react-dom
+npm install @zero-lab/onboarding-react @zero-lab/onboarding react react-dom
 ```
 
 Import the **core CSS separately** once in your app entry or root layout:
 
 ```tsx
-import '@onboarding/core/styles.css';
+import '@zero-lab/onboarding/styles.css';
 ```
 
 ## Minimal usage
 
 ```tsx
-import { OnboardingProvider, OnboardingStep, useOnboarding } from '@onboarding/react';
-import { localStorageAdapter, type OnboardingOptions } from '@onboarding/core';
+import { OnboardingProvider, OnboardingStep, useOnboarding } from '@zero-lab/onboarding-react';
+import { localStorageAdapter, type OnboardingOptions } from '@zero-lab/onboarding';
 
 const options: OnboardingOptions = {
   storage: localStorageAdapter('my-app'),
@@ -137,7 +137,7 @@ doesn't unmount the tour. See `examples/react`.
 - Render the same initial markup on server and client. Mounting happens in an
   effect, with a cached initial server snapshot. Start tours after hydration,
   e.g. from a button, not during render.
-- Import `@onboarding/core/styles.css` in `app/layout.tsx`.
+- Import `@zero-lab/onboarding/styles.css` in `app/layout.tsx`.
 
 `examples/nextjs/app/providers.tsx` is a complete implementation with a stable
 adapter and real pathname notifications.

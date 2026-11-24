@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { Providers } from './providers';
 import { StartButton } from './start-button';
-import '@onboarding/core/styles.css';
+import '@zero-lab/onboarding/styles.css';
 import './styles.css';
 
 export const metadata: Metadata = {

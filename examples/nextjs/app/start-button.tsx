@@ -1,6 +1,6 @@
 'use client';
 
-import { useOnboarding } from '@onboarding/react';
+import { useOnboarding } from '@zero-lab/onboarding-react';
 
 export function StartButton() {
   const { kit } = useOnboarding();

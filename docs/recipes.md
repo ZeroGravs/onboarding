@@ -40,7 +40,7 @@ kit.reset('welcome');
 Use memory-only storage for ephemeral tours:
 
 ```ts
-import { memoryStorage } from '@onboarding/core';
+import { memoryStorage } from '@zero-lab/onboarding';
 
 const options = {
   tours,
@@ -89,7 +89,7 @@ A step can also wait for lazy content with `target` or async `beforeShow`. Start
 ## Record analytics
 
 ```ts
-import type { OnboardingOptions } from '@onboarding/core';
+import type { OnboardingOptions } from '@zero-lab/onboarding';
 
 const options: OnboardingOptions = {
   tours,

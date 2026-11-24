@@ -37,7 +37,7 @@ test('offers frameworks before the live demo and a copyable, complete React quic
   await page.getByRole('link', { name: 'React quickstart', exact: true }).click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('React: your first tour');
   await expect(
-    page.getByText('The npm/pnpm installation commands below apply', { exact: false }),
+    page.getByText('pnpm add @zero-lab/onboarding-react @zero-lab/onboarding', { exact: true }),
   ).toBeVisible();
   const example = page.locator('div.language-tsx').first();
   await expect(example).toContainText('<OnboardingProvider options={options}>');

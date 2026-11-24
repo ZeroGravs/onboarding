@@ -35,7 +35,7 @@ The engine requests navigation, waits until the router reports the step route, i
 ## Vanilla JavaScript
 
 ```ts
-import { createHistoryRouter } from '@onboarding/core';
+import { createHistoryRouter } from '@zero-lab/onboarding';
 
 const router = createHistoryRouter();
 const stop = router.subscribe(() => renderPage(router.getPath()));
@@ -52,9 +52,9 @@ Create a stable adapter backed by committed `useLocation().pathname`; notify sub
 If you already use React Router's data router, it supplies the subscription directly. With your existing `router` and the `tours` above:
 
 ```tsx
-import { OnboardingProvider } from '@onboarding/react';
+import { OnboardingProvider } from '@zero-lab/onboarding-react';
 import { RouterProvider } from 'react-router-dom';
-import type { OnboardingOptions } from '@onboarding/core';
+import type { OnboardingOptions } from '@zero-lab/onboarding';
 
 const options: OnboardingOptions = {
   tours,
@@ -95,7 +95,7 @@ Use the adapter helpers exported by their packages. Vue listens for completed na
 With your existing Vue `app`, `router`, and tour definitions:
 
 ```ts
-import { createOnboardingPlugin, createVueRouterAdapter } from '@onboarding/vue';
+import { createOnboardingPlugin, createVueRouterAdapter } from '@zero-lab/onboarding-vue';
 
 app.use(router);
 app.use(
@@ -113,7 +113,7 @@ In Angular, add this provider alongside your existing `provideRouter(routes)`:
 ```ts
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { createAngularRouter, provideOnboarding } from '@onboarding/angular';
+import { createAngularRouter, provideOnboarding } from '@zero-lab/onboarding-angular';
 
 provideOnboarding(() => ({
   tours,

@@ -9,11 +9,11 @@ For an existing **Next.js App Router** application. The validated integration us
 ::: code-group
 
 ```sh [pnpm]
-pnpm add @onboarding/react @onboarding/core
+pnpm add @zero-lab/onboarding-react @zero-lab/onboarding
 ```
 
 ```sh [npm]
-npm install @onboarding/react @onboarding/core
+npm install @zero-lab/onboarding-react @zero-lab/onboarding
 ```
 
 :::
@@ -24,8 +24,8 @@ npm install @onboarding/react @onboarding/core
 'use client';
 
 import type { ReactNode } from 'react';
-import { OnboardingProvider } from '@onboarding/react';
-import type { OnboardingOptions } from '@onboarding/core';
+import { OnboardingProvider } from '@zero-lab/onboarding-react';
+import type { OnboardingOptions } from '@zero-lab/onboarding';
 
 const options: OnboardingOptions = {
   tours: [
@@ -61,7 +61,7 @@ The configuration is plain data, so it is safe during server rendering. Do not s
 ```tsx [app/layout.tsx]
 import type { ReactNode } from 'react';
 import AppOnboardings from './onboarding-provider';
-import '@onboarding/core/styles.css';
+import '@zero-lab/onboarding/styles.css';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -81,7 +81,7 @@ Only the provider is a client boundary; server-rendered children can still pass 
 ```tsx [app/page.tsx]
 'use client';
 
-import { useOnboarding } from '@onboarding/react';
+import { useOnboarding } from '@zero-lab/onboarding-react';
 
 export default function Page() {
   const { kit } = useOnboarding();

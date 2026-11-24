@@ -1,8 +1,17 @@
 {
-  "name": "@onboarding/react",
+  "name": "@zero-lab/onboarding-react",
   "version": "0.1.0",
   "description": "React bindings for Onboarding Kit",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeroGravs/onboarding.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://github.com/ZeroGravs/onboarding#readme",
+  "bugs": {
+    "url": "https://github.com/ZeroGravs/onboarding/issues"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -34,7 +43,7 @@
     "check:package": "publint && attw --pack"
   },
   "dependencies": {
-    "@onboarding/core": "workspace:^"
+    "@zero-lab/onboarding": "workspace:^"
   },
   "peerDependencies": {
     "react": ">=18 <20"

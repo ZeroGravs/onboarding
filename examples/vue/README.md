@@ -5,12 +5,12 @@ A render-function Vue app (no SFC compiler needed) with Vue Router and Onboardin
 ```sh
 # From the monorepo root
 pnpm install
-pnpm --filter @onboarding/core build
-pnpm --filter @onboarding/vue build
+pnpm --filter @zero-lab/onboarding build
+pnpm --filter @zero-lab/onboarding-vue build
 pnpm --filter @onboarding/example-vue dev --host 127.0.0.1 --port 5174
 ```
 
-For a standalone npm app, `npm install @onboarding/core @onboarding/vue vue vue-router`
+For a standalone npm app, `npm install @zero-lab/onboarding @zero-lab/onboarding-vue vue vue-router`
 and install the Vite/TypeScript dev dependencies in `package.json`.
 The checked-in workspace manifests require pnpm.
 

@@ -94,7 +94,7 @@ importers:
 
   docs:
     dependencies:
-      '@onboarding/core':
+      '@zero-lab/onboarding':
         specifier: workspace:*
         version: link:../packages/core
       vue:
@@ -131,10 +131,10 @@ importers:
       '@angular/router':
         specifier: 21.2.26
         version: 21.2.26(@angular/common@21.2.26(@angular/core@21.2.26(@angular/compiler@21.2.26)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@21.2.26(@angular/compiler@21.2.26)(rxjs@7.8.2)(zone.js@0.16.3))(@angular/platform-browser@21.2.26(@angular/common@21.2.26(@angular/core@21.2.26(@angular/compiler@21.2.26)(rxjs@7.8.2)(zone.js@0.16.3))(rxjs@7.8.2))(@angular/core@21.2.26(@angular/compiler@21.2.26)(rxjs@7.8.2)(zone.js@0.16.3)))(rxjs@7.8.2)
-      '@onboarding/angular':
+      '@zero-lab/onboarding-angular':
         specifier: workspace:^
         version: link:../../packages/angular/dist
-      '@onboarding/core':
+      '@zero-lab/onboarding':
         specifier: workspace:^
         version: link:../../packages/core
       rxjs:
@@ -162,10 +162,10 @@ importers:
 
   examples/nextjs:
     dependencies:
-      '@onboarding/core':
+      '@zero-lab/onboarding':
         specifier: workspace:^
         version: link:../../packages/core
-      '@onboarding/react':
+      '@zero-lab/onboarding-react':
         specifier: workspace:^
         version: link:../../packages/react
       next:
@@ -193,10 +193,10 @@ importers:
 
   examples/react:
     dependencies:
-      '@onboarding/core':
+      '@zero-lab/onboarding':
         specifier: workspace:^
         version: link:../../packages/core
-      '@onboarding/react':
+      '@zero-lab/onboarding-react':
         specifier: workspace:^
         version: link:../../packages/react
       react:
@@ -227,16 +227,16 @@ importers:
 
   examples/vanilla:
     dependencies:
-      '@onboarding/core':
+      '@zero-lab/onboarding':
         specifier: workspace:*
         version: link:../../packages/core
 
   examples/vue:
     dependencies:
-      '@onboarding/core':
+      '@zero-lab/onboarding':
         specifier: workspace:^
         version: link:../../packages/core
-      '@onboarding/vue':
+      '@zero-lab/onboarding-vue':
         specifier: workspace:^
         version: link:../../packages/vue
       vue:
@@ -255,7 +255,7 @@ importers:
 
   packages/angular:
     dependencies:
-      '@onboarding/core':
+      '@zero-lab/onboarding':
         specifier: workspace:^
         version: link:../core
       tslib:
@@ -305,7 +305,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@onboarding/core':
+      '@zero-lab/onboarding':
         specifier: workspace:^
         version: link:../core
       react:
@@ -314,7 +314,7 @@ importers:
 
   packages/vue:
     dependencies:
-      '@onboarding/core':
+      '@zero-lab/onboarding':
         specifier: workspace:^
         version: link:../core
       vue:

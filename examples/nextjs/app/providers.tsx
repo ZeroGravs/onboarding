@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import { localStorageAdapter, type OnboardingOptions } from '@onboarding/core';
-import { OnboardingProvider } from '@onboarding/react';
+import { localStorageAdapter, type OnboardingOptions } from '@zero-lab/onboarding';
+import { OnboardingProvider } from '@zero-lab/onboarding-react';
 
 export function Providers({ children }: { children: ReactNode }) {
   const pathname = usePathname();

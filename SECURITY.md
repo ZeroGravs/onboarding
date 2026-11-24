@@ -1,16 +1,12 @@
 # Security policy
 
-Onboarding Kit is an experimental, unpublished `0.1` preview. Its tours are not
+Onboarding Kit is an experimental `0.1` preview. Its tours are not
 an authorization boundary, a sandbox, or proof that a user completed a business
 action. See [application security boundaries](docs/security.md) for safe integration.
 
 ## Supported versions
 
-Until the first package release, fixes target the repository's default branch on
-a best-effort basis. There are no published versions with a security-support
-commitment yet.
-
-After publication, security fixes target the latest patch of the current minor
+For published packages, security fixes target the latest patch of the current minor
 release unless a release notice explicitly states otherwise. Older minor versions
 and unsupported framework versions are not covered by default.
 

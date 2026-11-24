@@ -9,12 +9,12 @@ import {
   type Onboarding,
   type OnboardingOptions,
   type OnboardingState,
-} from '@onboarding/core';
+} from '@zero-lab/onboarding';
 
 assert.equal(typeof globalThis.window, 'undefined');
 assert.equal(typeof globalThis.document, 'undefined');
 const requireFromConsumer = createRequire(join(cwd(), 'package.json'));
-assert(statSync(requireFromConsumer.resolve('@onboarding/core/styles.css')).isFile());
+assert(statSync(requireFromConsumer.resolve('@zero-lab/onboarding/styles.css')).isFile());
 const options: OnboardingOptions = {
   tours: [
     {

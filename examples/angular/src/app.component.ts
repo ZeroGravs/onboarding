@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { OnboardingService } from '@onboarding/angular';
+import { OnboardingService } from '@zero-lab/onboarding-angular';
 
 @Component({
   selector: 'app-root',

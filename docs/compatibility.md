@@ -14,7 +14,7 @@ Install Onboarding Kit into your existing application with **npm, pnpm, or Yarn*
 
 These are tested baselines, not a promise that every future framework release works automatically. Use patched framework releases and your framework's supported Node.js and TypeScript versions. Angular 18–20 are no longer supported; Angular 22 is not yet validated or in the peer range. This replaces the initial preview's broad Angular 18–21 claim.
 
-React, Vue, and core provide ESM, CommonJS, and declarations. Angular is ESM-only in the Angular Package Format. CSS is a separate `@onboarding/core/styles.css` import.
+React, Vue, and core provide ESM, CommonJS, and declarations. Angular is ESM-only in the Angular Package Format. CSS is a separate `@zero-lab/onboarding/styles.css` import.
 
 The Angular adapter requires RxJS 7.8.2+ within major 7. Older 7.4 packages do not resolve declarations correctly under the strict modern module-resolution check. TypeScript applications need DOM library types for the public browser APIs, even when compiling SSR code; server execution itself does not need DOM globals.
 

@@ -14,8 +14,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test:e2e": "pnpm build && pnpm --filter './examples/*' --filter '!@onboarding/example-nextjs' -r build && playwright test",
-    "docs:dev": "pnpm --filter @onboarding/core build && pnpm --filter @onboarding/docs dev",
-    "docs:build": "pnpm --filter @onboarding/core build && pnpm --filter @onboarding/docs build",
+    "docs:dev": "pnpm --filter @zero-lab/onboarding build && pnpm --filter @onboarding/docs dev",
+    "docs:build": "pnpm --filter @zero-lab/onboarding build && pnpm --filter @onboarding/docs build",
     "docs:preview": "pnpm --filter @onboarding/docs preview",
     "test:docs": "pnpm docs:build && playwright test --config playwright.docs.config.ts",
     "test:consumers": "pnpm build && node scripts/check-consumers.mjs",
@@ -65,7 +65,7 @@
       "limit": "4 kB",
       "ignore": [
         "react",
-        "@onboarding/core"
+        "@zero-lab/onboarding"
       ]
     },
     {
@@ -73,7 +73,7 @@
       "limit": "4 kB",
       "ignore": [
         "vue",
-        "@onboarding/core"
+        "@zero-lab/onboarding"
       ]
     }
   ]

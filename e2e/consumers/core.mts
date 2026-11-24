@@ -1,13 +1,13 @@
 import assert from 'node:assert/strict';
 import { statSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { createOnboarding, type Onboarding, type OnboardingState } from '@onboarding/core';
+import { createOnboarding, type Onboarding, type OnboardingState } from '@zero-lab/onboarding';
 import { assertInstalled, assertNoDOM, createOptions } from './common.js';
 
 assertNoDOM();
-assertInstalled('@onboarding/core');
-assertInstalled('@onboarding/core/styles.css');
-const css = fileURLToPath(import.meta.resolve('@onboarding/core/styles.css'));
+assertInstalled('@zero-lab/onboarding');
+assertInstalled('@zero-lab/onboarding/styles.css');
+const css = fileURLToPath(import.meta.resolve('@zero-lab/onboarding/styles.css'));
 assert(statSync(css).isFile());
 const kit: Onboarding = createOnboarding(createOptions());
 try {

@@ -20,7 +20,7 @@ Progress is stored in the browser's localStorage by default. It contains tour id
 - Use `memoryStorage()` when progress should not persist.
 
 ```ts
-import { createOnboarding, memoryStorage } from '@onboarding/core';
+import { createOnboarding, memoryStorage } from '@zero-lab/onboarding';
 
 const kit = createOnboarding({
   storage: memoryStorage(),

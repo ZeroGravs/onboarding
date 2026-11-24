@@ -10,8 +10,8 @@
     "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "@onboarding/core": "workspace:^",
-    "@onboarding/react": "workspace:^",
+    "@zero-lab/onboarding": "workspace:^",
+    "@zero-lab/onboarding-react": "workspace:^",
     "next": "^16.1.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

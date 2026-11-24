@@ -1,14 +1,14 @@
 import assert from 'node:assert/strict';
 import { createSSRApp, defineComponent, h, withDirectives } from 'vue';
 import { renderToString } from '@vue/server-renderer';
-import { createOnboarding, type Onboarding } from '@onboarding/core';
+import { createOnboarding, type Onboarding } from '@zero-lab/onboarding';
 import {
   createOnboardingPlugin,
   OnboardingProvider,
   useOnboarding,
   vOnboardingStep,
   type OnboardingContextValue,
-} from '@onboarding/vue';
+} from '@zero-lab/onboarding-vue';
 import { assertInstalled, assertNoDOM, createOptions } from './common.js';
 
 declare module 'vue' {
@@ -18,7 +18,7 @@ declare module 'vue' {
 }
 
 assertNoDOM();
-assertInstalled('@onboarding/vue');
+assertInstalled('@zero-lab/onboarding-vue');
 const kit = createOnboarding(createOptions());
 const providerProps: InstanceType<typeof OnboardingProvider>['$props'] = {
   kit,

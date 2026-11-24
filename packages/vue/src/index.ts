@@ -28,7 +28,7 @@ import {
   type Onboarding,
   type OnboardingOptions,
   type OnboardingState,
-} from '@onboarding/core';
+} from '@zero-lab/onboarding';
 
 export interface OnboardingContextValue {
   kit: Onboarding;
