@@ -1,0 +1,214 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color: #172554;
+  background: #f4f7fc;
+  font-synthesis: none;
+  line-height: 1.6;
+}
+.shell,
+.shell * {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at 90% 15%, #dbeafe, transparent 45%);
+  min-height: 100vh;
+}
+.shell button,
+.shell input {
+  font: inherit;
+}
+.shell button,
+.shell a,
+.shell input {
+  -webkit-tap-highlight-color: transparent;
+}
+.shell button {
+  cursor: pointer;
+}
+.shell a {
+  color: inherit;
+  text-decoration: none;
+}
+.shell a:focus-visible,
+.shell button:focus-visible,
+.shell input:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 4px;
+}
+.shell {
+  max-width: 1080px;
+  margin: auto;
+  padding: 0 28px;
+}
+.shell header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid #dbe3f0;
+  flex-wrap: wrap;
+}
+.brand {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.brand small {
+  margin-left: 8px;
+  color: #526484;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.shell nav {
+  display: flex;
+  gap: 22px;
+  margin-right: auto;
+  color: #526484;
+  font-size: 14px;
+}
+.shell nav a:hover {
+  color: #2563eb;
+}
+.primary {
+  border: 0;
+  border-radius: 9px;
+  background: #1d4ed8;
+  color: white;
+  padding: 11px 20px;
+  font-weight: 650;
+  box-shadow: 0 4px 10px #1d4ed81a;
+}
+.primary:hover {
+  background: #1e40af;
+}
+.shell main {
+  max-width: 790px;
+  margin: 64px auto 80px;
+}
+.eyebrow {
+  color: #2563eb;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+.shell h1 {
+  font-size: clamp(36px, 6vw, 58px);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin: 18px 0;
+}
+.shell h1 span {
+  color: #58709b;
+}
+.intro {
+  color: #526484;
+  max-width: 530px;
+  margin-bottom: 36px;
+}
+.card {
+  background: #ffffffeb;
+  border: 1px solid #dbe3f0;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 8px 26px #17255405;
+}
+.featured {
+  padding: 34px;
+}
+.badge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.shell h2 {
+  letter-spacing: -0.5px;
+  margin: 20px 0 8px;
+  font-size: 25px;
+}
+.shell h3 {
+  margin: 0 0 8px;
+}
+.card p {
+  color: #526484;
+  margin-top: 8px;
+}
+.metrics {
+  display: flex;
+  gap: 54px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid #edf1f7;
+}
+.metrics strong,
+.metrics span {
+  display: block;
+}
+.metrics strong {
+  font-size: 30px;
+}
+.metrics span {
+  color: #526484;
+  font-size: 12px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+.field {
+  display: grid;
+  gap: 8px;
+  margin: 24px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.field input {
+  border: 1px solid #b8c7df;
+  border-radius: 8px;
+  padding: 10px 12px;
+  width: 100%;
+  color: #172554;
+}
+.check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+.shell footer {
+  color: #687b99;
+  text-align: center;
+  font-size: 12px;
+  padding: 20px 0 32px;
+}
+@media (max-width: 600px) {
+  .shell header {
+    gap: 16px;
+  }
+  .shell nav {
+    order: 3;
+    width: 100%;
+  }
+  .shell header > .primary {
+    margin-left: auto;
+  }
+  .shell main {
+    margin-top: 40px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .metrics {
+    gap: 24px;
+  }
+  .featured {
+    padding: 24px;
+  }
+}

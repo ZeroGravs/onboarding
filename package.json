@@ -1,0 +1,80 @@
+{
+  "name": "onboarding-workspace",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.30.3",
+  "engines": {
+    "node": "^22.18.0 || ^24.11.0 || >=26.0.0"
+  },
+  "scripts": {
+    "build": "pnpm --filter './packages/*' -r build",
+    "test": "pnpm build && vitest run",
+    "typecheck": "pnpm --filter './packages/*' -r typecheck && pnpm --filter './examples/*' -r typecheck && pnpm --filter @onboarding/docs typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:e2e": "pnpm build && pnpm --filter './examples/*' --filter '!@onboarding/example-nextjs' -r build && playwright test",
+    "docs:dev": "pnpm --filter @onboarding/core build && pnpm --filter @onboarding/docs dev",
+    "docs:build": "pnpm --filter @onboarding/core build && pnpm --filter @onboarding/docs build",
+    "docs:preview": "pnpm --filter @onboarding/docs preview",
+    "test:docs": "pnpm docs:build && playwright test --config playwright.docs.config.ts",
+    "test:consumers": "pnpm build && node scripts/check-consumers.mjs",
+    "audit:dependencies": "pnpm audit --audit-level low",
+    "verify": "pnpm test && pnpm typecheck && pnpm lint && pnpm format:check && pnpm check:packages && pnpm size && pnpm audit:dependencies",
+    "verify:release": "pnpm verify && pnpm test:consumers && pnpm test:e2e && pnpm test:docs",
+    "check:packages": "pnpm --filter './packages/*' -r check:package",
+    "size": "size-limit",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm verify:release && changeset publish"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@changesets/cli": "^2.29.7",
+    "@eslint/js": "^9.39.0",
+    "@playwright/test": "^1.56.1",
+    "@size-limit/preset-small-lib": "^11.2.0",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^22.19.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "@vitejs/plugin-vue": "^6.0.11",
+    "@vue/test-utils": "^2.6.0",
+    "eslint": "^9.39.0",
+    "happy-dom": "^21.0.4",
+    "prettier": "^3.6.2",
+    "publint": "^0.3.15",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "size-limit": "^11.2.0",
+    "tsup": "^9.0.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.0",
+    "vite": "^8.3.8",
+    "vitest": "^4.1.12",
+    "vue": "^3.5.22"
+  },
+  "size-limit": [
+    {
+      "path": "packages/core/dist/index.js",
+      "limit": "18 kB"
+    },
+    {
+      "path": "packages/react/dist/index.js",
+      "limit": "4 kB",
+      "ignore": [
+        "react",
+        "@onboarding/core"
+      ]
+    },
+    {
+      "path": "packages/vue/dist/index.js",
+      "limit": "4 kB",
+      "ignore": [
+        "vue",
+        "@onboarding/core"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node"],
+    "strict": true,
+    "skipLibCheck": false,
+    "noEmitOnError": true,
+    "jsx": "react-jsx",
+    "outDir": "build",
+    "rootDir": ".",
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["*.ts", "*.tsx", "*.mts", "*.cts"]
+}

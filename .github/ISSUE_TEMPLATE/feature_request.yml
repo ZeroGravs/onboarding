@@ -1,0 +1,28 @@
+name: Feature request
+description: Propose a focused improvement to Onboarding Kit.
+title: '[Feature]: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Start with the problem and a small use case. Do not include private application code or sensitive information.
+        For vulnerabilities, follow SECURITY.md rather than posting details here.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What user or integration problem does this solve? Which frameworks are affected?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the smallest useful change. An API sketch is welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Describe workarounds and why existing APIs are insufficient.

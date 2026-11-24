@@ -1,0 +1,47 @@
+{
+  "name": "@onboarding/core",
+  "version": "0.1.0",
+  "description": "Framework-agnostic, accessible product tours",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/cdn.global.js",
+  "jsdelivr": "./dist/cdn.global.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup && tsup --config tsup.cdn.config.ts && node ../../scripts/copy-assets.mjs core",
+    "typecheck": "tsc --noEmit",
+    "check:package": "publint && attw --pack --exclude-entrypoints ./styles.css"
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.7.4"
+  }
+}

@@ -1,0 +1,45 @@
+name: Bug report
+description: Report a reproducible problem with an Onboarding Kit package.
+title: '[Bug]: '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For potential security vulnerabilities, use the repository's Security tab and follow SECURITY.md instead of opening a public issue.
+        Use synthetic data. Never include credentials, .env contents, private application code, or personal information.
+  - type: input
+    id: package-version
+    attributes:
+      label: Package and version
+      description: Include a commit if testing the unreleased preview.
+      placeholder: '@onboarding/react 0.1.0, or commit SHA'
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Framework/version, browser/version, operating system, and package manager/version.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Link to a minimal public reproduction or provide a small, self-contained example and exact steps.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+      description: Explain what should happen and what happens instead. Include sanitized errors if relevant.
+    validations:
+      required: true
+  - type: checkboxes
+    id: existing-guidance
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked the compatibility guide and searched existing issues.
+          required: true

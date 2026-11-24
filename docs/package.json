@@ -1,0 +1,21 @@
+{
+  "name": "@onboarding/docs",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev . --port 5174",
+    "build": "vitepress build .",
+    "preview": "vitepress preview .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@onboarding/core": "workspace:*",
+    "vue": "^3.5.43"
+  },
+  "devDependencies": {
+    "simple-icons": "16.38.1",
+    "typescript": "~5.9.3",
+    "vitepress": "2.0.0-alpha.21"
+  }
+}

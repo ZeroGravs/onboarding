@@ -1,0 +1,42 @@
+{
+  "name": "@onboarding/vue",
+  "version": "0.1.0",
+  "description": "Vue bindings for Onboarding Kit",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup && node ../../scripts/copy-assets.mjs vue",
+    "typecheck": "tsc --noEmit",
+    "check:package": "publint && attw --pack"
+  },
+  "dependencies": {
+    "@onboarding/core": "workspace:^"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  }
+}

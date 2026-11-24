@@ -1,0 +1,13 @@
+packages:
+  - packages/*
+  - examples/*
+  - docs
+
+# Test-tool parents have not yet adopted the patched dependency majors.
+overrides:
+  js-beautify>glob: ^14.0.2
+  '@npmcli/package-json>glob': ^14.0.2
+  cacache@20>glob: ^14.0.2
+  editorconfig@3>minimatch: ^11.0.5
+  ignore-walk@8>minimatch: ^11.0.5
+  '@tufjs/models@4>minimatch': ^11.0.5

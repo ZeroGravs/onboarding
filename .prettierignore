@@ -1,0 +1,12 @@
+pnpm-lock.yaml
+node_modules
+dist
+.next
+.next-verification
+.angular
+coverage
+playwright-report
+test-results
+examples/nextjs/next-env.d.ts
+docs/.vitepress/cache
+docs/.vitepress/.temp
