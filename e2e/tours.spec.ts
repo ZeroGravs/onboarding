@@ -101,3 +101,58 @@ test('wraps long action labels without making the popover scrollable', async ({ 
     }
   }).toPass();
 });
+
+test('shows hover feedback and respects themed button colors', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Start onboarding', exact: true }).click();
+  const dialog = page.getByRole('dialog');
+  await dialog.getByRole('button', { name: 'Next', exact: true }).click();
+
+  for (const [label, variant] of [
+    ['Skip', 'skip'],
+    ['Back', 'back'],
+    ['Done', 'primary'],
+  ] as const) {
+    const button = dialog.getByRole('button', { name: label, exact: true });
+    await page.mouse.move(0, 0);
+    const background = await button.evaluate(
+      (element) => getComputedStyle(element).backgroundColor,
+    );
+    await button.hover();
+    await expect(button).not.toHaveCSS('background-color', background);
+    await dialog.evaluate((element, name) => {
+      element.style.setProperty(`--onboarding-${name}-hover-background`, '#123456');
+      element.style.setProperty(`--onboarding-${name}-hover-text`, '#fff');
+    }, variant);
+    await expect(button).toHaveCSS('background-color', 'rgb(18, 52, 86)');
+    await expect(button).toHaveCSS('color', 'rgb(255, 255, 255)');
+  }
+});
+
+test('keeps the arrow on the straight edge with a wide target and wrapped copy', async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 555, height: 360 });
+  await page.goto('/');
+  await page.locator('[data-onboarding="welcome"]').evaluate((target) => {
+    (target as HTMLElement).style.width = '200vw';
+  });
+  await page.getByRole('button', { name: 'Start onboarding', exact: true }).click();
+  const dialog = page.getByRole('dialog');
+  const arrow = dialog.locator('.onboarding-arrow');
+  await expect(async () => {
+    const panel = (await dialog.boundingBox())!;
+    const caret = (await arrow.boundingBox())!;
+    const radius = await dialog.evaluate((element) =>
+      Number.parseFloat(getComputedStyle(element).borderTopLeftRadius),
+    );
+    expect(caret.x).toBeGreaterThanOrEqual(panel.x + radius);
+    expect(caret.x + caret.width).toBeLessThanOrEqual(panel.x + panel.width - radius);
+    const caretCenterY = caret.y + caret.height / 2;
+    const distanceToEdge = Math.min(
+      Math.abs(caretCenterY - panel.y),
+      Math.abs(caretCenterY - (panel.y + panel.height)),
+    );
+    expect(distanceToEdge).toBeLessThan(1);
+  }).toPass();
+});

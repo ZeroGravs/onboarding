@@ -18,6 +18,16 @@ Import `@zero-lab/onboarding/styles.css` once at the application entry point. Fr
 
 Default CSS lives in `@layer onboarding`; your unlayered CSS overrides it. The root element's `data-onboarding-theme="light"` or `"dark"` overrides system preference. Custom colors should meet contrast requirements.
 
+## Tour button colors
+
+Set these optional variables in the same selectors as your theme colors. Default hover backgrounds are derived from the active theme.
+
+| Buttons       | Resting colors                                                                       | Hover colors                                                               |
+| ------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| Next and Done | `--onboarding-primary`, `--onboarding-primary-text`                                  | `--onboarding-primary-hover-background`, `--onboarding-primary-hover-text` |
+| Back          | `--onboarding-back-background`, `--onboarding-back-text`, `--onboarding-back-border` | `--onboarding-back-hover-background`, `--onboarding-back-hover-text`       |
+| Skip          | `--onboarding-skip-background`, `--onboarding-skip-text`, `--onboarding-skip-border` | `--onboarding-skip-hover-background`, `--onboarding-skip-hover-text`       |
+
 ## Headless
 
 `renderer: 'none'` disables the spotlight and popover. Read `kit.subscribe` or the framework adapter's reactive state and render your own UI for `state.status === 'running'`. Lifecycle, targets, routing, progress, keyboard navigation, and analytics still work.

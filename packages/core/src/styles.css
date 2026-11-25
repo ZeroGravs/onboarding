@@ -82,11 +82,11 @@
     white-space: normal;
     overflow-wrap: anywhere;
     cursor: pointer;
-    border: 1px solid var(--onboarding-muted);
+    border: 1px solid var(--onboarding-back-border, var(--onboarding-muted));
     border-radius: calc(var(--onboarding-radius) / 2);
     padding: 7px 12px;
-    background: transparent;
-    color: var(--onboarding-text);
+    background: var(--onboarding-back-background, transparent);
+    color: var(--onboarding-back-text, var(--onboarding-text));
   }
   .onboarding-button:focus-visible {
     outline: 3px solid var(--onboarding-primary);
@@ -99,8 +99,36 @@
   }
   .onboarding-skip {
     margin-right: auto;
-    border-color: transparent;
-    color: var(--onboarding-muted);
+    border-color: var(--onboarding-skip-border, transparent);
+    background: var(--onboarding-skip-background, transparent);
+    color: var(--onboarding-skip-text, var(--onboarding-muted));
+  }
+  @media (hover: hover) {
+    .onboarding-button:hover {
+      background: var(
+        --onboarding-back-hover-background,
+        color-mix(in srgb, currentColor 10%, var(--onboarding-back-background, transparent))
+      );
+      color: var(--onboarding-back-hover-text, var(--onboarding-back-text, var(--onboarding-text)));
+    }
+    .onboarding-primary:hover {
+      background: var(
+        --onboarding-primary-hover-background,
+        color-mix(in srgb, var(--onboarding-primary) 88%, var(--onboarding-primary-text))
+      );
+      border-color: var(--onboarding-primary-hover-background, transparent);
+      color: var(--onboarding-primary-hover-text, var(--onboarding-primary-text));
+    }
+    .onboarding-skip:hover {
+      background: var(
+        --onboarding-skip-hover-background,
+        color-mix(in srgb, currentColor 10%, var(--onboarding-skip-background, transparent))
+      );
+      color: var(
+        --onboarding-skip-hover-text,
+        var(--onboarding-skip-text, var(--onboarding-muted))
+      );
+    }
   }
   .onboarding-arrow {
     position: absolute;
