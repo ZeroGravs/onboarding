@@ -51,7 +51,7 @@ a.active {
   font-weight: 700;
   text-decoration-thickness: 3px;
 }
-button {
+.shell button {
   border: 0;
   border-radius: 0.5rem;
   padding: 0.8rem 1.2rem;
@@ -61,7 +61,7 @@ button {
   font-weight: 700;
   cursor: pointer;
 }
-button:disabled {
+.shell button:disabled {
   opacity: 0.65;
   cursor: wait;
 }
