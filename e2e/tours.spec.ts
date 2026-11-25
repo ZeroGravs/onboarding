@@ -73,3 +73,31 @@ test('keeps the popover in the viewport and supports Escape cleanup', async ({ p
   await expect(dialog).toHaveCount(0);
   await expect(page.locator('[data-onboarding-kit]')).toHaveCount(0);
 });
+
+test('wraps long action labels without making the popover scrollable', async ({ page }) => {
+  await page.setViewportSize({ width: 280, height: 600 });
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Start onboarding', exact: true }).click();
+  const dialog = page.getByRole('dialog');
+  await dialog.getByRole('button', { name: 'Next', exact: true }).click();
+  const buttons = dialog.getByRole('button');
+  await expect(buttons).toHaveCount(3);
+  await buttons.evaluateAll((elements) => {
+    const labels = ['Rondleiding overslaan', 'Vorige stap', 'Rondleiding afronden'];
+    elements.forEach((button, index) => {
+      button.textContent = labels[index]!;
+    });
+  });
+
+  await expect(dialog).toHaveCSS('overflow', 'visible');
+  await expect(async () => {
+    const panel = (await dialog.boundingBox())!;
+    const actions = await Promise.all((await buttons.all()).map((button) => button.boundingBox()));
+    expect(actions[2]!.y).toBeGreaterThan(actions[0]!.y);
+    for (const action of actions) {
+      expect(action!.x).toBeGreaterThan(panel.x);
+      expect(action!.x + action!.width).toBeLessThan(panel.x + panel.width);
+      expect(action!.y + action!.height).toBeLessThan(panel.y + panel.height);
+    }
+  }).toPass();
+});

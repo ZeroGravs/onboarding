@@ -1,6 +1,6 @@
 {
   "name": "@zero-lab/onboarding-angular",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Standalone Angular adapters for Onboarding Kit",
   "license": "MIT",
   "repository": {

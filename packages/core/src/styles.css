@@ -36,8 +36,8 @@
   .onboarding-popover {
     position: fixed;
     width: min(340px, calc(100vw - 24px));
-    max-height: calc(100dvh - 24px);
-    overflow: auto;
+    overflow: visible;
+    overflow-wrap: anywhere;
     padding: 22px;
     border-radius: var(--onboarding-radius);
     background: var(--onboarding-background);
@@ -70,11 +70,17 @@
   }
   .onboarding-actions {
     display: flex;
-    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
     align-items: center;
   }
   .onboarding-button {
     font: inherit;
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
     cursor: pointer;
     border: 1px solid var(--onboarding-muted);
     border-radius: calc(var(--onboarding-radius) / 2);
