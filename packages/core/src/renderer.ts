@@ -80,11 +80,11 @@ export const defaultRenderer: Renderer = ({ state, kit, labels }) => {
   const caret = document.createElement('div');
   caret.className = 'onboarding-arrow';
   caret.setAttribute('aria-hidden', 'true');
-  const positionArrow = arrow({
+  const positionArrow = arrow(() => ({
     element: caret,
     // The rotated square extends past its layout box along the popover edge.
-    padding: () => (Number.parseFloat(getComputedStyle(panel).borderTopLeftRadius) || 0) + 3,
-  });
+    padding: (Number.parseFloat(getComputedStyle(panel).borderTopLeftRadius) || 0) + 3,
+  }));
   panel.append(progress, title, content, actions, caret);
   root.append(svg, panel);
   document.body.append(root);
